@@ -42,4 +42,14 @@ public void save() {
   }
 }
 
+public static Client find(int id) {
+  try(Connection con = DB.sql2o.open()) {
+    String sql ="SELECT * FROM client WHERE id=:id";
+    Client Client = con.createQuery(sql)
+    .addParameter("id", id)
+    .executeAndFetchFirst(Client.class);
+    return Client;
+  }
+}
+
 }
