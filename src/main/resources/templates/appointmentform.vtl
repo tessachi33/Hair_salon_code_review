@@ -1,22 +1,20 @@
-<h1>Add a new appointment!</h1>
-<form action='/new' method="post">
-  
+<h1>Add a new appointment</h1>
+<form action='/appointment_form' method="post">
 <input type="hidden" name=":id" value="$client.getId">
 
   <div class="form-group">
 
-    <label for="name">Client name</label>
+    <label for="name">Client Name</label>
     <input id="rName" name="rName" class="form-control" type="text">
 
-    <label for="stylist_id">Stylist name</label>
+    <label for="stylist_id">Stylist Name</label>
         <select id="stylist_id" name="stylist_id" type="text">
          #foreach($stylist in $stylist)
           <option value="$stylist.getId()">$stylist.getName()</option>
           #end
         </select>
-
         <br>
-  </div>
+ </div>
   <button type="submit" class="btn">Add your appointment!</button>
 </form>
 
