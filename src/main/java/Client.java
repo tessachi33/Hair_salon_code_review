@@ -10,12 +10,12 @@ public int getId() {
   return id;
 }
 
-public int getStylist_id() {
-  return stylist_id;
-}
-
 public String getName() {
   return name;
+}
+
+public int getStylist_id() {
+  return stylist_id;
 }
 
 public Client(String name, int stylist_id){
