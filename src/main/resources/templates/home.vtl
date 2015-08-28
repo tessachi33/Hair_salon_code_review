@@ -1,0 +1,28 @@
+<h1>Client check-in</h1>
+
+<h1>Add a restaurant to visit!</h1>
+
+<form action='/client_form' method="post">
+<input type="hidden" name=":id" value="$client.getId">
+
+  <div class="form-group">
+
+    <label for="name">Client name</label>
+    <input id="rName" name="rName" class="form-control" type="text">
+
+  <br>
+  <br>
+
+    <label for="_id">Stylist Name</label>
+        <select id="stylist_id" name="stylist_id" type="text">
+         #foreach($stylist in $stylist)
+          <option value="$stylist.getId()">$stylist.getName()</option>
+          #end
+        </select>
+
+        <br>
+        <br>
+
+    <button type="submit" class="btn">Add your appointment!</button>
+  </form>
+<h3>Are you a stylist? <br> View your appointments HERE #- link -# </h3>
