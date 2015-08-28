@@ -18,7 +18,7 @@ public String getName() {
   return name;
 }
 
-public Client(String name, Integer stylist_id){
+public Client(String name, int stylist_id){
   this.name = name;
   this.stylist_id = stylist_id;
 }
@@ -61,7 +61,7 @@ public static Client find(int id) {
     }
   }
 
-  public void update(String name, Integer stylist_id) {
+  public void update(String name, int stylist_id) {
   try(Connection con = DB.sql2o.open()) {
     String sql = "UPDATE stylist SET name = :name WHERE id=:id";
     con.createQuery(sql)
