@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StylistTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-08-28T17:56:40" hostname="Tessas-MacBook-Pro.local" time="0.112">
+<testsuite name="StylistTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-08-28T18:03:11" hostname="Tessas-MacBook-Pro.local" time="0.14">
   <properties/>
   <testcase name="equals_returnsTrueIfNameAreTheSame" classname="StylistTest" time="0.01"/>
-  <testcase name="save_saveObjectIntoDatabase_true" classname="StylistTest" time="0.033"/>
+  <testcase name="save_saveObjectIntoDatabase_true" classname="StylistTest" time="0.059"/>
   <testcase name="all_emptyAtFirst" classname="StylistTest" time="0.017"/>
-  <testcase name="find_findsStylistInDatabase_true" classname="StylistTest" time="0.026"/>
-  <testcase name="save_assignsIdtoObject" classname="StylistTest" time="0.026"/>
+  <testcase name="find_findsStylistInDatabase_true" classname="StylistTest" time="0.027"/>
+  <testcase name="save_assignsIdtoObject" classname="StylistTest" time="0.027"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
