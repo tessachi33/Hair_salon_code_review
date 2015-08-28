@@ -32,4 +32,14 @@ public boolean equals (Object otherClient) {
   }
 }
 
+public void save() {
+  try(Connection con = DB.sql2o.open()) {
+    String sql  ="INSERT INTO client (name) VALUES (:name)";
+    this.id = (int) con.createQuery(sql, true)
+    .addParameter("name", name)
+    .executeUpdate()
+    .getKey();
+  }
+}
+
 }
