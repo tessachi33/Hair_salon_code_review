@@ -3,8 +3,8 @@ import org.sql2o.*;
 
 public class Client {
   private int id;
-  private int stylist_id;
   private String name;
+  private int stylist_id;
 
 public int getId() {
   return id;
@@ -18,7 +18,7 @@ public String getName() {
   return name;
 }
 
-public Client(String name, int stylist_id){
+public Client(String name, Integer stylist_id){
   this.name = name;
   this.stylist_id = stylist_id;
 }
@@ -45,8 +45,8 @@ public void save() {
   try(Connection con = DB.sql2o.open()) {
     String sql ="INSERT INTO client (name, stylist_id) VALUES (:name, :stylist_id)";
     this.id = (int) con.createQuery(sql, true)
-    .addParameter("name", this.name)
-    .addParameter("stylist_id", this.stylist_id)
+    .addParameter("name", name)
+    .addParameter("stylist_id", stylist_id)
     .executeUpdate()
     .getKey();
   }
@@ -61,12 +61,13 @@ public static Client find(int id) {
     }
   }
 
-  public void update(String name) {
+  public void update(String name, Integer stylist_id) {
   try(Connection con = DB.sql2o.open()) {
     String sql = "UPDATE stylist SET name = :name WHERE id=:id";
     con.createQuery(sql)
       .addParameter("id", id)
       .addParameter("name", name)
+      .addParameter("stylist_id", stylist_id)
       .executeUpdate();
   }
 }

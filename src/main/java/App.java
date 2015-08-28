@@ -17,18 +17,17 @@ public class App {
          model.put("client", Client.all());
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
- }
 
- // post("/appointment", (request, response) -> {
- //    Map<String, Object> model = new HashMap<String, Object>();
- //    model.put("template", "templates/appointment_form.vtl");
- //    String name = request.queryParams("rName");
- //    int client_id = Integer.parseInt(request.queryParams("client_id"));
- //    String address = request.queryParams("rAddress");
- //    Stylist myStylist = new Stylist(name, client_id);
- //    myStylist.save();
- //    model.put("stylist", Stylist.all());
- //    model.put("client", Client.all());
- //    return new ModelAndView(model, layout);
- //  }, new VelocityTemplateEngine());
+ post("/appointment_form", (request, response) -> {
+    Map<String, Object> model = new HashMap<String, Object>();
+    model.put("template", "templates/appointment_form.vtl");
+    String name = request.queryParams("rName");
+    int client_id = Integer.parseInt(request.queryParams("stylist_id"));
+    Client myClient = new Client(name, 1);
+    myClient.save();
+    model.put("clients", Client.all());
+    model.put("stylists", Stylist.all());
+    return new ModelAndView(model, layout);
+  }, new VelocityTemplateEngine());
+ }
 }
