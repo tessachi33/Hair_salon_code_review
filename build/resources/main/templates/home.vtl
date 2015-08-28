@@ -1,28 +1,38 @@
-<h1>Client check in</h1>
+<h1>Stylist/Client check-in</h1>
 
-<h1>Add a restaurant to visit!</h1>
+<h3>All appontments:</h3>
 
-<form action='/client_form' method="post">
-<input type="hidden" name=":id" value="$client.getId">
+<table class="table table-striped">
+  <tr>
+    <td>Client Name</td>
+    <td>
+      stylist Name
+    </td>
+    <td>
+    Delete
+    </td>
+    <td>
+    Edit
+    </td>
+  </tr>
+#foreach($client in $client)
+<tr><td>$client.getName()</td>
+<td>$client.getStylistName()</td>
 
-  <div class="form-group">
+<td><form action="/client/$client.getId()/delete" method="post">
+    <button type="submit" class="btn btn-primary">
+    <i class="glyphicon glyphicon-trash"></i></span>
+</form></td>
 
-    <label for="name">Client name</label>
-    <input id="rName" name="rName" class="form-control" type="text">
+<td><form action="/client/$client.getId()/update" method="get">
+    <button type="submit" class="btn btn-primary">
+    <i class="glyphicon glyphicon-pencil"></i></span>
+</form></td>
+</tr>
 
-  <br>
-  <br>
+#end
+</table>
 
-    <label for="_id">Stylist Name</label>
-        <select id="stylist_id" name="stylist_id" type="text">
-         #foreach($stylist in $stylist)
-          <option value="$stylist.getId()">$stylist.getName()</option>
-          #end
-        </select>
+<h3><a href="/new">Add a new appointment</a><h3>
 
-        <br>
-        <br>
-
-    <button type="submit" class="btn">Add your appointment!</button>
-  </form>
-<h3>Are you a stylist? <br> View your appointments HERE #- link -# </h3>
+</form>
