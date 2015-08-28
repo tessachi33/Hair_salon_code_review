@@ -21,11 +21,11 @@ public class App {
        get("/new", (request, response) -> {
           Map<String, Object> model = new HashMap<String, Object>();
           model.put("stylist", Stylist.all());
-          model.put("template", "templates/appointmentform.vtl");
+          model.put("template", "templates/clientform.vtl");
           return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-      post("/appointment_form", (request, response) -> {
+      post("/client_form", (request, response) -> {
           Map<String, Object> model = new HashMap<String, Object>();
           model.put("template", "templates/home.vtl");
           String name = request.queryParams("rName");
@@ -57,19 +57,19 @@ public class App {
     HashMap<String, Object> model = new HashMap<String, Object>();
     model.put("stylist", Stylist.all());
     model.put("client", Client.find(Integer.parseInt(request.params(":id"))));
-    model.put("template", "templates/appointmentformupdate.vtl");
+    model.put("template", "templates/clientformupdate.vtl");
     return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
-   post("/appointment_update/:id", (request, response) -> {
+   post("/client_update/:id", (request, response) -> {
      HashMap<String, Object> model = new HashMap<String, Object>();
      Client client = Client.find(Integer.parseInt(request.params(":id")));
      String name = request.queryParams("rName");
      int stylist_id = Integer.parseInt(request.queryParams("stylist_id"));
      client.update(name, stylist_id);
-     model.put("template", "templates/home.vtl");
      model.put("clients", Client.all());
      model.put("stylist", Stylist.all());
+     model.put("template", "templates/home.vtl");
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
