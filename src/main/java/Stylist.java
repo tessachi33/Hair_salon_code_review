@@ -70,24 +70,24 @@ public static Stylist find(int id) {
       .executeUpdate();
   }
 }
-//
-// public String getClientName() {
-//   try(Connection con = DB.sql2o.open()){
-//     String sql = "SElECT name FROM client WHERE id = :id;";
-//     return con.createQuery(sql)
-//     .addParameter("id", client_id)
-//     .executeAndFetchFirst(String.class);
-//   }
-// }
-//
-// public void delete() {
-//   try(Connection con = DB.sql2o.open()){
-//     String sql = "DELETE FROM stylist WHERE id = :id;";
-//     con.createQuery(sql)
-//     .addParameter("id", id)
-//     .executeUpdate();
-//   }
-// }
+
+public String getClientName() {
+  try(Connection con = DB.sql2o.open()){
+    String sql = "SElECT name FROM client WHERE id = :id;";
+    return con.createQuery(sql)
+    .addParameter("id", client_id)
+    .executeAndFetchFirst(String.class);
+  }
+}
+
+public void delete() {
+  try(Connection con = DB.sql2o.open()){
+    String sql = "DELETE FROM stylist WHERE id = :id;";
+    con.createQuery(sql)
+    .addParameter("id", id)
+    .executeUpdate();
+  }
+}
 
 
 

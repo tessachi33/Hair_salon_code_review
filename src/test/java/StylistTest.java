@@ -42,33 +42,32 @@ public class StylistTest {
      Stylist savedStylist= Stylist.find(myStylist.getId());
      assertTrue(myStylist.equals(savedStylist));
      }
+  //
+  // @Test
+  //   public void save_savesClient_idIntoDB_true() {
+  //    Client myClient = new Client("jo");
+  //    myClient.save();
+  //    Stylist myStylist = new Stylist("Kelly", 1);
+  //    savedStylist.save();
+  //    Stylist savedStylist= Stylist.find(myStylist.getId());
+  //    assertEquals(savedStylist.getClient_id(), myClient.getId());
+  //    }
 
-      //  @Test
-      //  public void save_savesClient_idIntoDB_true() {
-      //    Client myClient = new Client("jo");
-      //    myClient.save();
-    //      Stylist myStylist = new Stylist("Kelly", 1);
-      //    savedStylist.save();
-        //  Stylist savedStylist= Stylist.find(myStylist.getId());
-      //    assertEquals(savedStylist.getClient_id(), myClient.getId());
-      //  }
-       //
-      //  @Test
-      //  public void update_updateRestaurantInfo() {
-      //      Stylist myStylist = new Stylist("Kelly", 1);
-      //    savedStylist.save();
-      //    savedStylist.update
-  //      Stylist myStylist = new Stylist("makr", 3);
-    //    assertTrue(Stylist.all().get(0).equals(savedStylist));
-      //  }
-       //
-      //  @Test
-      //  public void delete_deleteStylistFromDatabase() {
-      //    Stylist myStylist = new Stylist("kelly", 1);
-      //    myStylist.save();
-      //    myStylist.delete();
-      //    assertEquals(stylist.all().size(), 0);
-       //}
+  // @Test
+  //  public void update_updateStylistInfo() {
+  //   Stylist myStylist = new Stylist("Kelly", 1);
+  //   savedStylist.save();
+  //   savedStylist.update("makr", 1);
+  //   assertTrue(Stylist.all().get(0).equals(savedStylist));
+  //   }
+
+  // @Test
+  //   public void delete_deleteStylistFromDatabase() {
+  //    Stylist myStylist = new Stylist("kelly", 1);
+  //    myStylist.save();
+  //    myStylist.delete();
+  //    assertEquals(stylist.all().size(), 0);
+  //    }
 
 
 }

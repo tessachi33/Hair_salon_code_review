@@ -16,6 +16,12 @@ public class Client {
   public Client(String name) {
     this.name = name;
   }
+public static List<Client> all() {
+  String sql ="SELECT id, name FROM client";
+  try(Connection con = DB.sql2o.open()) {
+    return con.createQuery(sql).executeAndFetch(Client.class);
+  }
+}
 
 
 }
